@@ -1,8 +1,18 @@
 # test_calculadora.py
 import unittest
-from calculadora import Calculadora
+from src.calculadora import Calculadora
+
+sumar = Calculadora().suma  # Si sumar es un método dentro de la clase
+
+
 
 class TestCalculadora(unittest.TestCase):
+
+    def test_sumar(self):
+        assert sumar(2, 3) == 5
+        assert sumar(-1, 1) == 0
+        assert sumar(0, 0) == 0
+        assert sumar(100, 200) == 300
 
     def setUp(self):
         """ Configuración antes de cada test """
